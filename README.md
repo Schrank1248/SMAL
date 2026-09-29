@@ -8,3 +8,7 @@ SUPPORTED ARDUINOS
 - Tested on Arduino uno r4
 - should work on arduino mega and mega 2560
 - should work on arduino uno
+
+
+INSTALLATION
+You don‘t have to install the project itself. But you have to install arduino-cli. You can start the program by navigating to the projects folder in your command line and typing python3 SMAL.py [your code].sml
