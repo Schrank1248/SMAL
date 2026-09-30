@@ -1,0 +1,8 @@
+<language name="SMAL" version="1.0" kateversion="25.12" section="Sources" extensions="*.sml">
+
+<list name="scopeChange">
+  <item>if</item>
+  <item>event</item>
+</list>
+
+<DetectChar char="&quot;" context="StringModus"/>

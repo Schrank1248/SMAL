@@ -1,0 +1,16 @@
+{
+  "events":[],
+  "commands":[
+    ["helloLCD", 15],
+    ["initLCD", 16],
+    ["printLCD", 17]
+  ],
+  "parameterCount":[
+    ["helloLCD", 1],
+    ["initLCD", 1],
+    ["printLCD", 1]
+  ],
+  "deviceMapping":[
+    ["LCD", 10]
+  ]
+}
