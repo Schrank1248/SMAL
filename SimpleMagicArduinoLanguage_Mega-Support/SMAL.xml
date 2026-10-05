@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "language.dtd">
+
+<language name="SMAL"
+	version="2"
+	section="Sources"
+	extensions="*.sml"
+	mimetype="text/x-smal"
+	kateversion="5.0"
+	priority="10"
+	indenter="smal">
+
+	<highlighting>
+
+		<list name="control">
+			<item>event</item>
+			<item>if</item>
+			<item>while</item>
+			<item>for</item>
+		</list>
+
+		<list name="commands">
+			<item>log</item>
+			<item>setPin</item>
+			<item>switchPin</item>
+			<item>freeze</item>
+			<item>asyncDelay</item>
+			<item>setServo</item>
+			<item>setPinAnalog</item>
+			<item>getPin</item>
+			<item>getPinAnalog</item>
+		</list>
+
+		<list name="special">
+			<item>init</item>
+			<item>frameUpdate</item>
+			<item>secondUpdate</item>
+			<item>onPressed</item>
+			<item>onReleased</item>
+		</list>
+
+		<contexts>
+
+			<context name="Normal"
+				attribute="Normal Text"
+				lineEndContext="#stay">
+
+				<keyword
+					String="control"
+					attribute="Keyword"/>
+
+				<keyword
+					String="commands"
+					attribute="Function"/>
+
+				<keyword
+					String="special"
+					attribute="Built-in"/>
+
+				<RegExpr
+					String="@\w+"
+					attribute="AtWord"
+					context="#stay"/>
+
+				<RegExpr
+					String="\b[0-9]+(\.[0-9]+)?\b"
+					attribute="Decimal"
+					context="#stay"/>
+
+				<StringDetect
+					String="&quot;"
+					attribute="String"
+					context="DoubleString"/>
+
+				<StringDetect
+					String="'"
+					attribute="String"
+					context="SingleString"/>
+
+			</context>
+
+			<context name="DoubleString"
+				attribute="String"
+				lineEndContext="#pop">
+
+				<DetectChar
+					char="&quot;"
+					attribute="String"
+					context="#pop"/>
+
+			</context>
+
+			<context name="SingleString"
+				attribute="String"
+				lineEndContext="#pop">
+
+				<DetectChar
+					char="'"
+					attribute="String"
+					context="#pop"/>
+
+			</context>
+
+		</contexts>
+
+		<itemDatas>
+
+			<itemData
+				name="Normal Text"
+				defStyleNum="dsNormal"/>
+
+			<itemData
+				name="Keyword"
+				defStyleNum="dsKeyword"
+				bold="true"/>
+
+			<itemData
+				name="Function"
+				defStyleNum="dsFunction"/>
+
+			<itemData
+				name="Built-in"
+				defStyleNum="dsKeyword"
+				bold="true"/>
+
+			<itemData
+				name="AtWord"
+				defStyleNum="dsNormal"
+				bold="true"/>
+
+			<itemData
+				name="Decimal"
+				defStyleNum="dsDecVal"/>
+
+			<itemData
+				name="String"
+				defStyleNum="dsString"/>
+
+		</itemDatas>
+
+	</highlighting>
+
+	<general>
+		<keywords casesensitive="true"/>
+	</general>
+
+</language>
